@@ -1,10 +1,23 @@
 <div class="card">
     <div class="card-body">
-      <h1 class="card-title">Mon premier article</h1>
-      <p class="card-text">
-        Comme il faut un  debut à tout, je me lance dans la création d'un blog... et je vais vous saouler en expliquent tout ce que je fait pas-à-pas dans des cards comme celle-ci.
-      </p>
+      <div class="image">
+        <img [src]="article.image" class="card-img-top" [alt]="article.author">
+      </div>
+      <h1 class="card-title">{{ article.title }}</h1>
+      <article>
+        <p>Auteur: <cite> {{ article.author }}</cite> </p>
+        <p class="card-text">
+          {{ article.content }}
+        </p>
+    </article>
     </div>
-  </div>
+    <button (click)="togglePublication()">Ajouter un commentaire</button>
+    <div class="commentaire">
+      <input type="textarea"  [(ngModel)]="article.comment">
+    </div>
+    <div *ngIf="article.isPublished" class="card-commentaire">
+      <p>Commentaire: {{ article.comment }}</p>
+    </div>
+  
 
 
