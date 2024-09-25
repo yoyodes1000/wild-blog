@@ -11,11 +11,14 @@
         </p>
     </article>
     </div>
-    <button (click)="togglePublication()">Ajouter un commentaire</button>
+    <button (click)="togglePublication()" [hidden]="!article.isPublished">Ajouter un commentaire</button>
+    <button (click)="togglePublication()" [hidden]="article.isPublished">Enlever un commentaire</button>
     <div class="commentaire">
       <input type="textarea"  [(ngModel)]="article.comment">
     </div>
-    <div *ngIf="article.isPublished" class="card-commentaire">
+    <!-- <div *ngIf="article.isPublished" class="card-commentaire" > -->
+    <div [hidden]="article.isPublished" class="card-commentaire" >
+
       <p>Commentaire: {{ article.comment }}</p>
     </div>
   
