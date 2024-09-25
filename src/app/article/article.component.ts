@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-article',
@@ -11,16 +12,26 @@ import { FormsModule } from '@angular/forms';
 })
 export class ArticleComponent {
 
+  user: User = {
+    name: 'Pimpoye',
+    isAdmin: false,
+  }
+
   article = {
-    title: 'Titre de l\'article',
-    author: 'John Doe',
-    content: 'Voici le contenu de l\'article.',
-    image: 'https://via.placeholder.com/350x150',
+    title: 'Les jeux de société',
+    author: 'Moi même',
+    content: 'Ca parle à qui? ',
+    image: 'https://www.ville-martignas.fr/medias/2024/04/illustration-soiree-jeux-de-societe_1-1701696528.jpg',
     isPublished: true,
+    isAdmin: false,
     comment: ''
   };
 
   togglePublication(): void {
     this.article.isPublished = !this.article.isPublished;
+  }
+
+  powerUp(): void {
+    this.user.isAdmin = !this.user.isAdmin;
   }
 }

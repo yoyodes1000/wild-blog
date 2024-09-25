@@ -1,26 +1,43 @@
+@if(user.isAdmin) {
+  <button (click)="powerUp()" class="btn-power">
+    Redevenir une personne lambda
+  </button>
+  <h1 [ngStyle]="{ color: user.isAdmin ? 'red' : 'black' }">
+    Bonjour {{ user.name }} !
+  </h1>}
+@else {<button (click)="powerUp()" class="btn-lose">
+  Devenir Administrateur comme par magie!
+</button>
+<h1 [ngStyle]="{ color: user.isAdmin ? 'red' : 'black' }">
+  Bonjour !
+</h1>}
 <div class="card">
-    <div class="card-body">
-      <div class="image">
-        <img [src]="article.image" class="card-img" [alt]="article.author">
-      </div>
-      <h1 class="card-title">{{ article.title }}</h1>
-      <article>
-        <p>Auteur: <cite> {{ article.author }}</cite> </p>
-        <p class="card-text">
-          {{ article.content }}
-        </p>
+  <div class="card-body">
+    <div class="image">
+      <img [src]="article.image" class="card-img" [alt]="article.author">
+    </div>
+    <h2  class="card-title">
+      {{ article.title }}
+    </h2>
+    <article>
+      <p>Auteur: <cite> {{ article.author }}</cite> </p>
+      <button class="btn">View</button>
+      @if (user.isAdmin) {<button class="btn">Edit</button>}
+      <p class="card-text">
+        {{ article.content }}
+      </p>
     </article>
-    </div>
-    <button (click)="togglePublication()" [hidden]="!article.isPublished">Ajouter un commentaire</button>
-    <button (click)="togglePublication()" [hidden]="article.isPublished">Enlever un commentaire</button>
-    <div class="commentaire">
-      <input type="textarea"  [(ngModel)]="article.comment">
-    </div>
-    <!-- <div *ngIf="article.isPublished" class="card-commentaire" > -->
-    <div [hidden]="article.isPublished" class="card-commentaire" >
-
-      <p>Commentaire: {{ article.comment }}</p>
-    </div>
-  
-
-
+  </div>
+  @if (article.isPublished) {<button (click)="togglePublication()" class="btn">
+    Ajouter un commentaire
+  </button>}
+  @else {<button (click)="togglePublication()" class="btn">
+    Enlever un commentaire
+  </button>}
+  <div class="commentaire">
+    <textarea type="text" [(ngModel)]="article.comment"></textarea>
+  </div>
+  @if (!article.isPublished) {<div class="card-commentaire">
+    <p>Commentaire: {{ article.comment }}</p>
+  </div>}
+</div>
