@@ -14,6 +14,12 @@
     background-color: #dfd3d3; 
   }
 
+  div.card img img{
+    max-width: 350px;
+    max-height: 150px;
+    object-fit: contain;
+  }
+
   .card-body {
     padding: 10px;
   }
