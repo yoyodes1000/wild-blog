@@ -80,6 +80,11 @@ button.btn-lose {
     border-radius: 5px;
     border: 1px solid #000000;
   }
+
+  .popular-article {
+    text-shadow: 2px 2px 5px gray;
+    font-weight: bold;
+  }
   
   @media (max-width: 768px) {
     .card {

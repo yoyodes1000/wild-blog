@@ -17,18 +17,40 @@ export class ArticleComponent {
     isAdmin: false,
   }
 
-  article = {
-    title: 'Les jeux de société',
-    author: 'Moi même',
-    content: 'Ca parle à qui? ',
-    image: 'https://www.ville-martignas.fr/medias/2024/04/illustration-soiree-jeux-de-societe_1-1701696528.jpg',
-    isPublished: true,
-    isAdmin: false,
-    comment: ''
-  };
-
+  articles = [
+    { 
+      title: 'Angular 16: Les nouveautés', 
+      author: 'Alice', 
+      content: 'Les nouveautés d\'Angular 16 incluent...', 
+      image: 'https://via.placeholder.com/350x150',
+      isPublished: true, 
+      comment: '', 
+      likes: 120 
+    },
+    { 
+      title: 'Développer une API REST', 
+      author: 'Bob', 
+      content: 'Développer une API REST nécessite...', 
+      image: 'https://via.placeholder.com/350x150',
+      isPublished: false, 
+      comment: '', 
+      likes: 75 
+    },
+    { 
+      title: 'Pourquoi TypeScript est essentiel ?', 
+      author: 'Charlie', 
+      content: 'TypeScript apporte de la robustesse...', 
+      image: 'https://via.placeholder.com/350x150',
+      isPublished: true, 
+      comment: '', 
+      likes: 200 
+    }
+  ];
+  
   togglePublication(): void {
-    this.article.isPublished = !this.article.isPublished;
+    for (let article of this.articles) {
+      article.isPublished = !article.isPublished;
+    }
   }
 
   powerUp(): void {
