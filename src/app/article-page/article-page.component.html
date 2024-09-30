@@ -1,0 +1,14 @@
+<div class="card">
+      <h2 class="card-title">{{ getArticleById(articleId).title }}</h2>
+    <cite>
+      {{ getArticleById(articleId).author }}
+    </cite>
+        <div class="card-body">
+            <section>
+              <p class="card-text">
+                {{ getArticleById(articleId).content}}
+              </p>
+            </section>
+        </div>
+        <button [routerLink]="['/']">Retour à l'accueil</button>
+</div>

@@ -1,10 +1,19 @@
-<div class="card">
+
+@for(article of articleList; track $index) {
+  <div class="card">
+    <a [routerLink]="['/article', $index+1]" >
+      <h2 class="card-title">{{ article.title }}</h2>
+    </a>
+    <cite>
+      {{ article.author }}
+    </cite>
     <div class="card-body">
-      <h1 class="card-title">Mon premier article</h1>
-      <p class="card-text">
-        Comme il faut un  debut à tout, je me lance dans la création d'un blog... et je vais vous saouler en expliquent tout ce que je fait pas-à-pas dans des cards comme celle-ci.
-      </p>
+      <section>
+        <p class="card-text">
+          {{ article.content}}
+        </p>
+      </section>
     </div>
-  </div>
+  </div>}
 
 
