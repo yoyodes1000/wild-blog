@@ -1,0 +1,52 @@
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 50px auto;
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    width:40%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+text-decoration: none;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 40%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+label {
+    margin-left: 20px;
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+
+input {
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 60%;
+    height: 100px;
+    border-radius: 5px;
+}

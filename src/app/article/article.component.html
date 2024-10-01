@@ -1,19 +1,30 @@
+<div class="container">
+
 
 @for(article of articleList; track $index) {
   <div class="card">
-    <a [routerLink]="['/article', $index+1]" >
       <h2 class="card-title">{{ article.title }}</h2>
+      <p>
+        Auteur:
+        <cite>
+          {{ article.author }}
+        </cite>
+      </p>
+    <a>
+      <button [routerLink]="['/article', $index+1]">Lire cet article</button>
     </a>
-    <cite>
-      {{ article.author }}
-    </cite>
-    <div class="card-body">
+    <!-- <div class="card-body">
       <section>
         <p class="card-text">
           {{ article.content}}
         </p>
       </section>
-    </div>
+    </div> -->
   </div>}
+  <a [routerLink]="['/form']">
+    <button>
+      accès au formulaire secret mais faut pas le dire
+    </button>
+  </a>
 
-
+</div>
