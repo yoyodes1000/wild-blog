@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Article } from '../models/article.class';
 import { Router, RouterLink } from '@angular/router';
 import { ArticleService } from '../models/article.service';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ButtonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })

@@ -1,80 +1,112 @@
-<form #contactForm="ngForm" (ngSubmit)="contactForm.valid && onSubmit()" >
-    <fieldset>
-        <label for="firstname">Prénom</label>
-        <input id="firstname" name="firstname" [(ngModel)]="newMessage.firstname" #firstname="ngModel" minlength="2" maxlength="15" type="text" required>
-        @if (firstname.errors && contactForm.submitted) {
-            <div>
-              @if (firstname.errors['required']) {
-                <span>Le prénom est requis</span>
-              }
-             @if (firstname.errors['minlength']) {
-                <span>Le prénom doit comporter au moins 2 caractères</span>
-            }
-            @if (firstname.errors['maxlength']) {
-                <span>Le prénom doit comporter 15 caractères maximum</span>
-            }
-            </div>}
-    </fieldset>
+<form #contactForm="ngForm" (ngSubmit)="contactForm.valid && onSubmit()">
+  <fieldset>
+    <label for="firstname">Prénom</label>
+    <input
+      id="firstname"
+      name="firstname"
+      [(ngModel)]="newMessage.firstname"
+      #firstname="ngModel"
+      minlength="2"
+      maxlength="15"
+      type="text"
+      required
+    />
+    @if (firstname.errors && contactForm.submitted) {
+    <div>
+      @if (firstname.errors['required']) {
+      <span>Le prénom est requis</span>
+      } @if (firstname.errors['minlength']) {
+      <span>Le prénom doit comporter au moins 2 caractères</span>
+      } @if (firstname.errors['maxlength']) {
+      <span>Le prénom doit comporter 15 caractères maximum</span>
+      }
+    </div>
+    }
+  </fieldset>
 
-    <fieldset>
-        <label for="lastname">Nom</label>
-        <input id="lastname" name="lastname" [(ngModel)]="newMessage.lastname" #lastname="ngModel" minlength="2" maxlength="15" type="text" required>
-        @if (lastname.errors && contactForm.submitted) {
-            <div>
-              @if (lastname.errors['required']) {
-                <span>Le nom est requis</span>
-              }
-              @if (lastname.errors['minlength']) {
-                <span>Le nom doit comporter au moins 2 caractères</span>
-            }
-            @if (lastname.errors['maxlength']) {
-                <span>Le nom doit comporter 15 caractères maximum</span>
-            }
-            </div>}
-    </fieldset>
+  <fieldset>
+    <label for="lastname">Nom</label>
+    <input
+      id="lastname"
+      name="lastname"
+      [(ngModel)]="newMessage.lastname"
+      #lastname="ngModel"
+      minlength="2"
+      maxlength="15"
+      type="text"
+      required
+    />
+    @if (lastname.errors && contactForm.submitted) {
+    <div>
+      @if (lastname.errors['required']) {
+      <span>Le nom est requis</span>
+      } @if (lastname.errors['minlength']) {
+      <span>Le nom doit comporter au moins 2 caractères</span>
+      } @if (lastname.errors['maxlength']) {
+      <span>Le nom doit comporter 15 caractères maximum</span>
+      }
+    </div>
+    }
+  </fieldset>
 
-    <fieldset>
-        <label for="email">email</label>
-        <input id="email" name="email" [(ngModel)]="newMessage.email" #email="ngModel"  type="email" required>
-        @if (email.errors && contactForm.submitted) {
-            <div>
-              @if (email.errors['required']) {
-                <span>Le nom est requis</span>
-              }@if (email.errors['type']) {
-                <span>L'email est invalide</span>
-              }
-            </div>}
-    </fieldset>
+  <fieldset>
+    <label for="email">email</label>
+    <input
+      id="email"
+      name="email"
+      [(ngModel)]="newMessage.email"
+      #email="ngModel"
+      type="email"
+      required
+    />
+    @if (email.errors && contactForm.submitted) {
+    <div>
+      @if (email.errors['required']) {
+      <span>Le nom est requis</span>
+      }@if (email.errors['type']) {
+      <span>L'email est invalide</span>
+      }
+    </div>
+    }
+  </fieldset>
 
-    <fieldset>
-        <label for="content">Contenu du message</label>
-        <textarea id="content" name="content" [(ngModel)]="newMessage.content" #content="ngModel" minlength="2" type="text" required></textarea>
-        @if (content.errors  && contactForm.submitted) {
-            <div>
-              @if (content.errors['required']) {
-                <span>Le contenu est requis</span>
-              }
-              @if (content.errors['minlength']) {
-                <span>Le nom doit comporter au moins 2 caractères</span>
-            }
-            </div>}
-    </fieldset>
-        <div class="button-container">
-            <button type="reset">Réinitialiser</button>
-            <button type="submit">Envoyer</button>
-        </div>
+  <fieldset>
+    <label for="content">Contenu du message</label>
+    <textarea
+      id="content"
+      name="content"
+      [(ngModel)]="newMessage.content"
+      #content="ngModel"
+      minlength="2"
+      type="text"
+      required
+    ></textarea>
+    @if (content.errors && contactForm.submitted) {
+    <div>
+      @if (content.errors['required']) {
+      <span>Le contenu est requis</span>
+      } @if (content.errors['minlength']) {
+      <span>Le nom doit comporter au moins 2 caractères</span>
+      }
+    </div>
+    }
+  </fieldset>
+  <div class="button">
+      <p-button label="Reinitialiser" type="reset"/>
+      <p-button label="Envoyer" type="submit" />
+  </div>
 </form>
 @if ( contactForm.submitted) {
-        <div class="verification">
-            <h2>Message envoyé</h2>
-            <p>Prénom : {{newMessage.firstname}}</p>
-            <p>Nom : {{newMessage.lastname}}</p>
-            <p>Email : {{newMessage.email}}</p>
-            <p>Contenu : {{newMessage.content}}</p>
-        </div>
-    }
-<a [routerLink]="['/']">
-    <button>
-        retour à la page d'accueil
-    </button>
-</a>
+<div class="verification">
+  <h2>Message envoyé</h2>
+  <p>Prénom : {{ newMessage.firstname }}</p>
+  <p>Nom : {{ newMessage.lastname }}</p>
+  <p>Email : {{ newMessage.email }}</p>
+  <p>Contenu : {{ newMessage.content }}</p>
+</div>
+}
+<div class="button-container">
+  <a [routerLink]="['/']">
+    <p-button label="Retour à l'accueil" />
+  </a>
+</div>
