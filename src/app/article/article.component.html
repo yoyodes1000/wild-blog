@@ -2,6 +2,9 @@
   @for(article of articleList; track $index) {
   <div class="card">
     <h2 class="card-title">{{ article.title }}</h2>
+    <div class="image">
+      <img [src]="article.image" [alt]="article.title">
+    </div>
     <p>
       Auteur:
       <cite>
@@ -15,21 +18,20 @@
     </div>
   </div>
   }
-
-  <div>
+</div>
+<div>
+  <div class="button-container">
     <h2>Quete 6: Template driven form</h2>
-    <div class="button-container">
-    <a [routerLink]="['/form']">
-      <p-button label="accès au formulaire" />
-    </a>
-  </div>
-  </div>
-  <br />
-  <div>
+  <a [routerLink]="['/form']">
+    <p-button label="accès au formulaire" />
+  </a>
+</div>
+</div>
+<br />
+<div>
+  <div class="button-container">
     <h2>Quete 7: Reactive form</h2>
-    <div class="button-container">
-    <a [routerLink]="['/sign-up']">
-      <p-button label="formulaire d'inscription" />
-    </a>
-  </div>
+  <a [routerLink]="['/sign-up']">
+    <p-button label="formulaire d'inscription" />
+  </a>
 </div>

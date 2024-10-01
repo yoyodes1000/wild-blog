@@ -1,5 +1,8 @@
 <div class="card">
       <h2 class="card-title">{{ getArticleById(articleId).title }}</h2>
+      <div class="image">
+        <img [src]="getArticleById(articleId).image" [alt]="getArticleById(articleId).title">
+      </div>
     <cite>
       {{ getArticleById(articleId).author }}
     </cite>
