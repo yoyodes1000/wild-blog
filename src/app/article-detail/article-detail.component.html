@@ -1,0 +1,15 @@
+<div class="container">
+    <a [routerLink]="['/article', article.id]">
+        <h2>{{ article.title}}</h2>
+    </a>
+    <img [src]="article.image" [alt]="article.title">
+    <p>
+        Author: 
+        <cite>
+            {{article.author}}
+        </cite>
+    </p>
+    <a [routerLink]="['/article', article.id]">
+        <p-button label="Lire l'article" />
+    </a>
+</div>

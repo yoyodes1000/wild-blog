@@ -1,17 +1,11 @@
 .card {
-    width: 40%;
-    margin: 10px auto; 
-    background-color: #dbd4d4; 
+    width: 60%;
+    margin: 50px auto; 
+    background-color: cadetblue; 
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
     padding: 10px;
-  }
-
-  .card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
-    background-color: #dfd3d3; 
   }
 
   .card-body {
@@ -27,9 +21,8 @@
   }
   
   .card-text {
-    font-size: 1.1rem;
+    font-size: 2rem;
     line-height: 1.6;
-    color: #555;
   }
 
   h2 {

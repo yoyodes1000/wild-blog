@@ -52,14 +52,20 @@
     </fieldset>
   </div>
   <h2>mot de passe qui marche: azertyuiop$1P</h2>
-  <button (click)="onSubmit()">S'inscrire</button>
+  <div class="button-container">
+    <a [routerLink]="['/']">
+      <p-button label="S'inscrire" (click)="onSubmit()" />
+    </a>
+  </div>
 </form>
-
-<a [routerLink]="['/']"><button>Retour à la liste des articles</button></a>
-
 @if (signUpForm.valid && protection) {
-  <h2>Vérification des données envoyèes</h2>
+  <h2>Vérification des données envoyées</h2>
   <p>{{ newCustomer.username }}</p>
   <p>{{ newCustomer.email }}</p>
   <p>{{ newCustomer.password }} non c'est pas le mot de passe, même pas vrai d'abord</p>
 }
+<div class="button-container">
+  <a [routerLink]="['/']">
+    <p-button label="Retour à l'accueil" />
+  </a>
+</div>

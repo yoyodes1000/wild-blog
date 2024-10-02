@@ -1,11 +1,14 @@
 <div class="card">
       <h2 class="card-title">{{ getArticleById(articleId).title }}</h2>
+      <p>
+        Author: 
+        <cite>
+          {{ getArticleById(articleId).author }}
+        </cite>
+      </p>
       <div class="image">
         <img [src]="getArticleById(articleId).image" [alt]="getArticleById(articleId).title">
       </div>
-    <cite>
-      {{ getArticleById(articleId).author }}
-    </cite>
         <div class="card-body">
             <section>
               <p class="card-text">
@@ -13,9 +16,14 @@
               </p>
             </section>
         </div>
-        <div class="button-container">
-          <a [routerLink]="['/']">
-            <p-button label="Retour à l'accueil" />
-          </a>
-        </div>
-</div>
+      </div>
+      <div class="button-container">
+        <a [routerLink]="['/']">
+          <p-button label="Retour à l'accueil" />
+        </a>
+      </div>
+
+
+
+
+

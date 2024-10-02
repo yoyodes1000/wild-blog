@@ -1,12 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Article } from './article.class';
+import { Component } from '@angular/core';
+import { Article } from '../models/article.class';
+import { ArticleComponent } from "../article/article.component";
+import { ArticleDetailComponent } from "../article-detail/article-detail.component";
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-home-page',
+  standalone: true,
+  imports: [ArticleComponent, ArticleDetailComponent],
+  templateUrl: './home-page.component.html',
+  styleUrl: './home-page.component.scss'
 })
-export class ArticleService {
+export class HomePageComponent {
 
-  articleList: Article[] = [
+  articleListToChild: Article[] = [
     new Article(
       1, 
       'Angular', 
@@ -57,5 +63,4 @@ export class ArticleService {
       'Great article!'),
 ];
 
-  constructor() { }
 }
