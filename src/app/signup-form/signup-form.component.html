@@ -21,7 +21,7 @@
     <div>
       @if (signUpForm.get('email')?.errors?.['required']) {
         <span>L'email est requis.</span>
-        } @if (signUpForm.get('username')?.errors?.['minlength']) {
+        } @if (signUpForm.get('email')?.errors?.['minlength']) {
         <span>Le nom doit comporter au moins 3 caractères.</span>
         }
     </div>
