@@ -35,6 +35,14 @@ textarea {
     gap: 50px;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: red;
+}
+
 .button-container {
     display: flex;
     flex-direction: column;

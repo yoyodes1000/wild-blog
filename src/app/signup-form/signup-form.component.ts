@@ -53,7 +53,6 @@ passwordMatchValidator(): ValidatorFn {
 
   onSubmit(): void {
     if (this.signUpForm.valid) {
-      console.log("log du formuliare en ts", this.signUpForm.value);
       this.newCustomer.email = this.signUpForm.value.email as string;
       this.newCustomer.username = this.signUpForm.value.username as string;
       this.newCustomer.password = this.signUpForm.value.passwords?.password as string;

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { Article } from '../models/article.class';
-import { ArticleComponent } from "../article/article.component";
 import { ArticleDetailComponent } from "../article-detail/article-detail.component";
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ArticleComponent, ArticleDetailComponent],
+  imports: [ArticleDetailComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -61,6 +60,12 @@ export class HomePageComponent {
       'https://symfony.com/logos/symfony_black_03.png', 
       true, 
       'Great article!'),
-];
+  ];
+
+  isLiked: string = '';
+
+    likeArticle(event: string) {
+      this.isLiked = event;
+    }
 
 }

@@ -53,9 +53,7 @@
   </div>
   <h2>mot de passe qui marche: azertyuiop$1P</h2>
   <div class="button-container">
-    <a [routerLink]="['/']">
-      <p-button label="S'inscrire" (click)="onSubmit()" />
-    </a>
+      <p-button type="form" label="S'inscrire" (click)="onSubmit()" />
   </div>
 </form>
 @if (signUpForm.valid && protection) {

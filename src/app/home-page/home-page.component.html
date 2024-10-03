@@ -1,5 +1,8 @@
 <div class="article-list">
-@for(article of articleListToChild; track  $index) {
-    <app-article-detail  [article]="articleListToChild[$index]"></app-article-detail>
-}
+    @for(article of articleListToChild; track  $index) {
+    <app-article-detail  [article]="articleListToChild[$index]" (isLiked)="likeArticle($event)"></app-article-detail>
+        @if(isLiked !== '' && isLiked.includes(article.title)) {
+            <p class="like"> {{ isLiked }}</p>
+        }
+    }
 </div>

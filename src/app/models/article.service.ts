@@ -14,7 +14,8 @@ export class ArticleService {
       "Développé par Google, Angular est un framework front-end complet et structuré basé sur TypeScript. Il est conçu pour construire des applications web monopages (SPA) et fournit une architecture de composants, une gestion de la dépendance, ainsi qu'un système robuste de routing. Angular utilise un 'two-way data binding' (liaison bidirectionnelle), ce qui facilite la synchronisation des données entre le modèle et la vue. Il est idéal pour les applications à grande échelle grâce à sa structure stricte et à ses nombreux outils intégrés..", 
       'https://angular.io/assets/images/logos/angular/angular.png', 
       true, 
-      'Great article!'),
+      'Great article!',
+    ),
     new Article(
       2, 
       'React', 
